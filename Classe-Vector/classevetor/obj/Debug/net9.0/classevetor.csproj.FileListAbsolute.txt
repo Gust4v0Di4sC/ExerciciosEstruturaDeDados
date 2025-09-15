@@ -1,0 +1,14 @@
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Classe-Vector\classevetor\bin\Debug\net9.0\classevetor.exe
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Classe-Vector\classevetor\bin\Debug\net9.0\classevetor.deps.json
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Classe-Vector\classevetor\bin\Debug\net9.0\classevetor.runtimeconfig.json
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Classe-Vector\classevetor\bin\Debug\net9.0\classevetor.dll
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Classe-Vector\classevetor\bin\Debug\net9.0\classevetor.pdb
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Classe-Vector\classevetor\obj\Debug\net9.0\classevetor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Classe-Vector\classevetor\obj\Debug\net9.0\classevetor.AssemblyInfoInputs.cache
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Classe-Vector\classevetor\obj\Debug\net9.0\classevetor.AssemblyInfo.cs
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Classe-Vector\classevetor\obj\Debug\net9.0\classevetor.csproj.CoreCompileInputs.cache
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Classe-Vector\classevetor\obj\Debug\net9.0\classevetor.dll
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Classe-Vector\classevetor\obj\Debug\net9.0\refint\classevetor.dll
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Classe-Vector\classevetor\obj\Debug\net9.0\classevetor.pdb
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Classe-Vector\classevetor\obj\Debug\net9.0\classevetor.genruntimeconfig.cache
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Classe-Vector\classevetor\obj\Debug\net9.0\ref\classevetor.dll

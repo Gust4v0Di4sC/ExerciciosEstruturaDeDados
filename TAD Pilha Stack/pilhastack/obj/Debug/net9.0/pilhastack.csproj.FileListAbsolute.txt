@@ -1,0 +1,14 @@
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD Pilha Stack\pilhastack\bin\Debug\net9.0\pilhastack.exe
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD Pilha Stack\pilhastack\bin\Debug\net9.0\pilhastack.deps.json
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD Pilha Stack\pilhastack\bin\Debug\net9.0\pilhastack.runtimeconfig.json
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD Pilha Stack\pilhastack\bin\Debug\net9.0\pilhastack.dll
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD Pilha Stack\pilhastack\bin\Debug\net9.0\pilhastack.pdb
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD Pilha Stack\pilhastack\obj\Debug\net9.0\pilhastack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD Pilha Stack\pilhastack\obj\Debug\net9.0\pilhastack.AssemblyInfoInputs.cache
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD Pilha Stack\pilhastack\obj\Debug\net9.0\pilhastack.AssemblyInfo.cs
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD Pilha Stack\pilhastack\obj\Debug\net9.0\pilhastack.csproj.CoreCompileInputs.cache
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD Pilha Stack\pilhastack\obj\Debug\net9.0\pilhastack.dll
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD Pilha Stack\pilhastack\obj\Debug\net9.0\refint\pilhastack.dll
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD Pilha Stack\pilhastack\obj\Debug\net9.0\pilhastack.pdb
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD Pilha Stack\pilhastack\obj\Debug\net9.0\pilhastack.genruntimeconfig.cache
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD Pilha Stack\pilhastack\obj\Debug\net9.0\ref\pilhastack.dll

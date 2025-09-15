@@ -1,0 +1,14 @@
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Pilha\PilhaTAD\bin\Debug\net9.0\PilhaTAD.exe
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Pilha\PilhaTAD\bin\Debug\net9.0\PilhaTAD.deps.json
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Pilha\PilhaTAD\bin\Debug\net9.0\PilhaTAD.runtimeconfig.json
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Pilha\PilhaTAD\bin\Debug\net9.0\PilhaTAD.dll
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Pilha\PilhaTAD\bin\Debug\net9.0\PilhaTAD.pdb
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Pilha\PilhaTAD\obj\Debug\net9.0\PilhaTAD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Pilha\PilhaTAD\obj\Debug\net9.0\PilhaTAD.AssemblyInfoInputs.cache
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Pilha\PilhaTAD\obj\Debug\net9.0\PilhaTAD.AssemblyInfo.cs
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Pilha\PilhaTAD\obj\Debug\net9.0\PilhaTAD.csproj.CoreCompileInputs.cache
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Pilha\PilhaTAD\obj\Debug\net9.0\PilhaTAD.dll
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Pilha\PilhaTAD\obj\Debug\net9.0\refint\PilhaTAD.dll
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Pilha\PilhaTAD\obj\Debug\net9.0\PilhaTAD.pdb
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Pilha\PilhaTAD\obj\Debug\net9.0\PilhaTAD.genruntimeconfig.cache
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\Pilha\PilhaTAD\obj\Debug\net9.0\ref\PilhaTAD.dll

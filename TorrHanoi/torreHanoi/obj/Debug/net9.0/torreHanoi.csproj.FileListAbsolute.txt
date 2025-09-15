@@ -1,0 +1,14 @@
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TorrHanoi\torreHanoi\bin\Debug\net9.0\torreHanoi.exe
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TorrHanoi\torreHanoi\bin\Debug\net9.0\torreHanoi.deps.json
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TorrHanoi\torreHanoi\bin\Debug\net9.0\torreHanoi.runtimeconfig.json
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TorrHanoi\torreHanoi\bin\Debug\net9.0\torreHanoi.dll
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TorrHanoi\torreHanoi\bin\Debug\net9.0\torreHanoi.pdb
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TorrHanoi\torreHanoi\obj\Debug\net9.0\torreHanoi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TorrHanoi\torreHanoi\obj\Debug\net9.0\torreHanoi.AssemblyInfoInputs.cache
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TorrHanoi\torreHanoi\obj\Debug\net9.0\torreHanoi.AssemblyInfo.cs
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TorrHanoi\torreHanoi\obj\Debug\net9.0\torreHanoi.csproj.CoreCompileInputs.cache
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TorrHanoi\torreHanoi\obj\Debug\net9.0\torreHanoi.dll
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TorrHanoi\torreHanoi\obj\Debug\net9.0\refint\torreHanoi.dll
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TorrHanoi\torreHanoi\obj\Debug\net9.0\torreHanoi.pdb
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TorrHanoi\torreHanoi\obj\Debug\net9.0\torreHanoi.genruntimeconfig.cache
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TorrHanoi\torreHanoi\obj\Debug\net9.0\ref\torreHanoi.dll

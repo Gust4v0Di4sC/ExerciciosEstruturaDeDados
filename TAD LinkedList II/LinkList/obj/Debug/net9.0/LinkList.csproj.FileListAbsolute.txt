@@ -1,0 +1,14 @@
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD LinkedList II\LinkList\bin\Debug\net9.0\LinkList.exe
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD LinkedList II\LinkList\bin\Debug\net9.0\LinkList.deps.json
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD LinkedList II\LinkList\bin\Debug\net9.0\LinkList.runtimeconfig.json
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD LinkedList II\LinkList\bin\Debug\net9.0\LinkList.dll
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD LinkedList II\LinkList\bin\Debug\net9.0\LinkList.pdb
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD LinkedList II\LinkList\obj\Debug\net9.0\LinkList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD LinkedList II\LinkList\obj\Debug\net9.0\LinkList.AssemblyInfoInputs.cache
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD LinkedList II\LinkList\obj\Debug\net9.0\LinkList.AssemblyInfo.cs
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD LinkedList II\LinkList\obj\Debug\net9.0\LinkList.csproj.CoreCompileInputs.cache
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD LinkedList II\LinkList\obj\Debug\net9.0\LinkList.dll
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD LinkedList II\LinkList\obj\Debug\net9.0\refint\LinkList.dll
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD LinkedList II\LinkList\obj\Debug\net9.0\LinkList.pdb
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD LinkedList II\LinkList\obj\Debug\net9.0\LinkList.genruntimeconfig.cache
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TAD LinkedList II\LinkList\obj\Debug\net9.0\ref\LinkList.dll
