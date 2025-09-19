@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TADDoubleLinkedCircle")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60d048aea22d161a11fa65da45ff27fc5f1da4b7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2dbfc7ac932573e4b8f3a2c868f7358f76cf6e6c")]
 [assembly: System.Reflection.AssemblyProductAttribute("TADDoubleLinkedCircle")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TADDoubleLinkedCircle")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

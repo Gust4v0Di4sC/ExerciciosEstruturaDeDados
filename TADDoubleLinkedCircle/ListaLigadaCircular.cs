@@ -115,5 +115,119 @@ namespace taddoublelinkedlistcirc
             Qtd--;
             return elementoRemovido;
         }
+
+        public Elemento? GetPosHorario(Elemento? elementoBuscado, int posicao)
+        {
+            if (posicao > Qtd || posicao <= 0)
+            {
+                return null;
+            }
+            int posicaoAtual = 1;
+            Elemento? elementoDeslocado = elementoBuscado;
+            while (posicaoAtual < posicao)
+            {
+                if (elementoDeslocado != null)
+                {
+                    elementoDeslocado = elementoDeslocado.GetSetProximo;
+                }
+                posicaoAtual++;
+            }
+            return elementoDeslocado;
+        }
+
+        public Elemento? GetPosAntiHorario(Elemento? elementoBuscado, int posicao)
+        {
+            if (posicao > Qtd || posicao <= 0)
+            {
+                return null;
+            }
+            int posicaoAtual = 1;
+            Elemento? elementoDeslocado = elementoBuscado;
+            while (posicaoAtual < posicao)
+            {
+                if (elementoDeslocado != null)
+                {
+                    elementoDeslocado = elementoDeslocado.GetSetAnterior;
+                }
+                posicaoAtual++;
+            }
+            return elementoDeslocado;
+        }
+
+        public bool RemoveElemento(Elemento? elementoRemovido)
+        {
+            if (IsEmpty() || elementoRemovido == null)
+            {
+                return false;
+            }
+
+            if (Qtd == 1)
+            {
+                RemoveUnico();
+            }
+            else
+            {
+                if (elementoRemovido == Inicio)
+                {
+                    if (elementoRemovido != null)
+                    {
+                        Inicio = elementoRemovido.GetSetProximo;
+                    }
+
+                    elementoRemovido.GetSetAnterior.GetSetProximo = elementoRemovido.GetSetProximo;
+
+                    elementoRemovido.GetSetProximo.GetSetAnterior = elementoRemovido.GetSetAnterior;
+
+                    AutoConex(elementoRemovido);
+                    Qtd--;
+                }
+            }
+            return true;
+        }
+
+
+        public bool InsereHorario(Elemento elementoNovo, Elemento elementoAtual)
+        {
+            if (elementoNovo == null)
+            {
+                return false;
+            }
+
+            if (Qtd <= 1 || elementoAtual == Inicio)
+            {
+                InsereInicio(elementoNovo);
+            }
+            else if (elementoAtual == Inicio.GetSetAnterior)
+            {
+                InsereUltimo(elementoNovo);
+            }
+            else
+            {
+                elementoNovo.GetSetProximo = elementoAtual;
+                elementoNovo.GetSetAnterior = elementoAtual.GetSetAnterior;
+                elementoAtual.GetSetProximo.GetSetAnterior = elementoNovo;
+                elementoAtual.GetSetAnterior = elementoNovo;
+                Qtd++;
+            }
+            return true;
+        }
+
+        public bool InsereAntiHorario(Elemento elementoNovo, Elemento elementoAtual)
+        {
+            if (elementoNovo == null)
+            {
+                return false;
+            }
+
+            if (IsEmpty())
+            {
+                InsereInicio(elementoNovo);
+            }
+            else
+            {
+                elementoNovo.GetSetProximo = elementoAtual.GetSetProximo;
+                elementoNovo.GetSetAnterior = elementoAtual;
+            }
+        }
     }
 }
