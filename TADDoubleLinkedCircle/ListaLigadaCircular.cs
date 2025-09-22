@@ -7,13 +7,19 @@ namespace taddoublelinkedlistcirc
 
         public void ImprimeElemento(Elemento? elementoImpresso)
         {
-            Console.WriteLine(elementoImpresso.GetSetId);
+            if (elementoImpresso != null)
+            {
+               Console.WriteLine(elementoImpresso.GetSetId); 
+            }
         }
 
         private void AutoConex(Elemento? elementoAutoConectado)
         {
-            elementoAutoConectado.GetSetProximo = elementoAutoConectado;
-            elementoAutoConectado.GetSetAnterior = elementoAutoConectado;
+            if (elementoAutoConectado != null)
+            {
+              elementoAutoConectado.GetSetProximo = elementoAutoConectado;elementoAutoConectado.GetSetAnterior = elementoAutoConectado;  
+            }
+            
         }
 
         private bool InsereEmVazio(Elemento? elementoInserido)
@@ -48,11 +54,15 @@ namespace taddoublelinkedlistcirc
             }
             else
             {
-                elementoInserido.GetSetProximo = Inicio;
-                elementoInserido.GetSetAnterior = Inicio.GetSetAnterior;
-                Inicio.GetSetAnterior = elementoInserido;
-                elementoInserido.GetSetAnterior = elementoInserido.GetSetProximo;
-                Inicio = elementoInserido;
+                if (elementoInserido != null && Inicio != null)
+                {
+                    elementoInserido.GetSetProximo = Inicio;elementoInserido.GetSetAnterior = Inicio.GetSetAnterior;
+                    Inicio.GetSetAnterior = elementoInserido;
+                    elementoInserido.GetSetAnterior = elementoInserido.GetSetProximo;
+                    Inicio = elementoInserido;
+                }
+                
+                
             }
             Qtd++;
         }
@@ -65,10 +75,14 @@ namespace taddoublelinkedlistcirc
             }
             else
             {
-                elementoInserido.GetSetProximo = Inicio;
-                elementoInserido.GetSetAnterior = Inicio.GetSetAnterior;
-                Inicio.GetSetAnterior = elementoInserido.GetSetProximo;
-                Inicio.GetSetAnterior = elementoInserido;
+                if (elementoInserido != null && Inicio != null)
+                {
+                    elementoInserido.GetSetProximo = Inicio;
+                    elementoInserido.GetSetAnterior = Inicio.GetSetAnterior;
+                    Inicio.GetSetAnterior = elementoInserido.GetSetProximo;
+                    Inicio.GetSetAnterior = elementoInserido;
+                }
+                
             }
             Qtd++;
         }
@@ -86,11 +100,20 @@ namespace taddoublelinkedlistcirc
             }
 
             Elemento? elementoRemovido = Inicio;
-            Inicio.GetSetAnterior.GetSetProximo = Inicio.GetSetProximo;
-            Inicio.GetSetProximo.GetSetAnterior = Inicio.GetSetAnterior;
-            Inicio = Inicio.GetSetProximo;
-            elementoRemovido.GetSetProximo = elementoRemovido;
-            elementoRemovido.GetSetAnterior = elementoRemovido;
+            
+            
+            if (elementoRemovido != null && Inicio != null)
+            {
+                if (Inicio.GetSetAnterior != null && Inicio.GetSetProximo != null)
+                {
+                    Inicio.GetSetAnterior.GetSetProximo = Inicio.GetSetProximo;
+                    Inicio.GetSetProximo.GetSetAnterior = Inicio.GetSetAnterior;
+                }
+                Inicio = Inicio.GetSetProximo;
+                elementoRemovido.GetSetProximo = elementoRemovido;
+                elementoRemovido.GetSetAnterior = elementoRemovido;
+            }
+            
             Qtd--;
             return elementoRemovido;
         }
@@ -107,13 +130,27 @@ namespace taddoublelinkedlistcirc
                 return RemoveUnico();
             }
 
-            Elemento? elementoRemovido = Inicio.GetSetAnterior;
-            Inicio.GetSetAnterior = elementoRemovido.GetSetAnterior;
-            elementoRemovido.GetSetAnterior.GetSetProximo = Inicio;
-            elementoRemovido.GetSetProximo = elementoRemovido;
-            elementoRemovido.GetSetAnterior = elementoRemovido;
-            Qtd--;
-            return elementoRemovido;
+            if (Inicio != null)
+            {
+                Elemento? elementoRemovido = Inicio.GetSetAnterior;
+                if (elementoRemovido != null)
+                {
+                    if (elementoRemovido.GetSetAnterior != null && Inicio != null)
+                    {
+                        Inicio.GetSetAnterior = elementoRemovido.GetSetAnterior;
+                        elementoRemovido.GetSetAnterior.GetSetProximo = Inicio;
+                        elementoRemovido.GetSetProximo = elementoRemovido;
+                        elementoRemovido.GetSetAnterior = elementoRemovido;
+                    }
+                }
+
+
+                Qtd--;
+                return elementoRemovido;
+            }
+
+            return null;
+            
         }
 
         public Elemento? GetPosHorario(Elemento? elementoBuscado, int posicao)
@@ -172,11 +209,18 @@ namespace taddoublelinkedlistcirc
                     if (elementoRemovido != null)
                     {
                         Inicio = elementoRemovido.GetSetProximo;
+
+                        if (elementoRemovido.GetSetAnterior != null && elementoRemovido.GetSetProximo != null)
+                        {
+                            elementoRemovido.GetSetAnterior.GetSetProximo = elementoRemovido.GetSetProximo;
+
+                            elementoRemovido.GetSetProximo.GetSetAnterior = elementoRemovido.GetSetAnterior;
+                        }
                     }
 
-                    elementoRemovido.GetSetAnterior.GetSetProximo = elementoRemovido.GetSetProximo;
+                    
 
-                    elementoRemovido.GetSetProximo.GetSetAnterior = elementoRemovido.GetSetAnterior;
+                    
 
                     AutoConex(elementoRemovido);
                     Qtd--;
@@ -193,23 +237,37 @@ namespace taddoublelinkedlistcirc
                 return false;
             }
 
-            if (Qtd <= 1 || elementoAtual == Inicio)
+            if (Inicio != null)
             {
-                InsereInicio(elementoNovo);
+                if (Qtd <= 1 || elementoAtual == Inicio)
+                {
+                    InsereInicio(elementoNovo);
+                }
+                else if (elementoAtual == Inicio.GetSetAnterior)
+                {
+                    InsereUltimo(elementoNovo);
+                }
+                else
+                {
+                    if (elementoNovo != null && elementoAtual != null)
+                    {
+
+                        elementoNovo.GetSetProximo = elementoAtual;
+                        elementoNovo.GetSetAnterior = elementoAtual.GetSetAnterior;
+
+                        if (elementoAtual.GetSetProximo != null)
+                        {
+                            elementoAtual.GetSetProximo.GetSetAnterior = elementoNovo;
+                        }
+                        elementoAtual.GetSetAnterior = elementoNovo;
+                    }
+
+                    Qtd++;
+                }
+                return true;
             }
-            else if (elementoAtual == Inicio.GetSetAnterior)
-            {
-                InsereUltimo(elementoNovo);
-            }
-            else
-            {
-                elementoNovo.GetSetProximo = elementoAtual;
-                elementoNovo.GetSetAnterior = elementoAtual.GetSetAnterior;
-                elementoAtual.GetSetProximo.GetSetAnterior = elementoNovo;
-                elementoAtual.GetSetAnterior = elementoNovo;
-                Qtd++;
-            }
-            return true;
+
+            return false;
         }
 
         public bool InsereAntiHorario(Elemento elementoNovo, Elemento elementoAtual)
@@ -225,9 +283,84 @@ namespace taddoublelinkedlistcirc
             }
             else
             {
-                elementoNovo.GetSetProximo = elementoAtual.GetSetProximo;
-                elementoNovo.GetSetAnterior = elementoAtual;
+                if (elementoNovo != null && elementoAtual != null)
+                {
+                    elementoNovo.GetSetProximo = elementoAtual.GetSetProximo;
+                    elementoNovo.GetSetAnterior = elementoAtual;
+                    if (elementoAtual.GetSetProximo != null)
+                    {
+                       elementoAtual.GetSetProximo.GetSetAnterior = elementoNovo; 
+                    }
+                    
+                    elementoAtual.GetSetProximo = elementoNovo;
+                }
+                
+                if (elementoAtual == Inicio)
+                {
+                    Inicio = elementoNovo;
+                }
+                Qtd++;
             }
+            return true;
+        }
+
+        public void ImprimeHorario()
+        {
+            if (IsEmpty())
+            {
+                Console.WriteLine("A lista está vazia");
+            }
+            else
+            {
+                Elemento? elementoImpresso = GetInicio();
+                int posicaoAtual = 1;
+                while (posicaoAtual < GetQtd())
+                {
+                    ImprimeElemento(elementoImpresso);
+                    if (elementoImpresso != null)
+                    {
+                      elementoImpresso = elementoImpresso.GetSetAnterior;  
+                    }
+                    
+                    posicaoAtual++;
+                }
+            }
+        }
+
+        public Elemento? GetUltimo()
+        {
+            if (IsEmpty())
+            {
+                return null;
+            }
+
+            if (Inicio != null)
+            {
+                return Inicio.GetSetAnterior;
+            }
+
+            return null;
+        }
+
+        public bool IsEmpty()
+        {
+            return Inicio == null;
+        }
+
+        public Elemento? GetInicio()
+        {
+            return Inicio;
+        }
+
+        public int GetQtd()
+        {
+            return Qtd;
+        }
+
+        public void Destroi()
+        {
+            Inicio = null;
+            Qtd = 0;
         }
     }
 }
