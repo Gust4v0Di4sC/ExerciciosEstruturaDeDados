@@ -38,7 +38,8 @@ namespace taddoublelinkedlistcirc
                     int optionInput = Convert.ToInt32(Console.ReadLine());
                     switch (optionInput)
                     {
-                        case 0: System.Environment.Exit(0);
+                        case 0:
+                            System.Environment.Exit(0);
                             break;
                         case 1:
                             {
@@ -141,26 +142,70 @@ namespace taddoublelinkedlistcirc
                         case 8:
                             {
                                 int posicaoInserida = Posicao();
+                                Elemento? elementoRemovido = null;
+                                elementoRemovido = L2lc.GetPosAntiHorario(L2lc.GetInicio(), posicaoInserida);
+                                L2lc.RemoveElemento(elementoRemovido);
+                                if (elementoRemovido != null)
+                                {
+                                    Console.WriteLine(msg_er);
+                                    Console.Write(msg_er);
+                                    L2lc.ImprimeElemento(elementoRemovido);
+                                }
+                                else
+                                {
+                                    Console.WriteLine(msg_of);
+                                }
 
                             }
                             break;
                         case 9:
+                            {
+                                L2lc.ImprimeHorario();
+                            }
                             break;
                         case 10:
+                            {
+                                L2lc.ImprimeAntiHorario();
+                            }
                             break;
                         case 99:
+                            {
+                                Elemento? elementoImpresso = L2lc.GetInicio();
+                                for (int i = 1; i <= 15; i++)
+                                {
+                                    L2lc.ImprimeElemento(elementoImpresso);
+                                    elementoImpresso = elementoImpresso.GetSetProximo;
+                                }
+                            }
                             break;
                         default:
                             break;
                     }
                 }
-                catch (System.Exception)
+                catch (System.Exception exception)
                 {
-
+                    Console.WriteLine(msg_of + "\n (mensagem do sistema >> " + exception.GetType() + " )");
                     throw;
                 }
             }
 
+        }
+
+        private static Elemento CriaElemento()
+        {
+            Console.WriteLine("Informe o Id do Elemento->  ");
+            int inputId = Convert.ToInt32(Console.ReadLine());
+            Elemento? elementoCriado = new Elemento();
+            elementoCriado.GetSetId = inputId;
+            return elementoCriado;
+        }
+
+        private static int Posicao()
+        {
+            Console.WriteLine("AVISO: a posicao nao pode ser maior que a quantidade de elementos.");
+            Console.WriteLine("Informe a posição desejada: ");
+            int inputPos = Convert.ToInt32(Console.ReadLine());
+            return inputPos;
         }
     }
 }

@@ -1,0 +1,15 @@
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TADDoubleLinkedCircle\bin\Debug\net9.0\TADDoubleLinkedCircle.exe
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TADDoubleLinkedCircle\bin\Debug\net9.0\TADDoubleLinkedCircle.deps.json
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TADDoubleLinkedCircle\bin\Debug\net9.0\TADDoubleLinkedCircle.runtimeconfig.json
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TADDoubleLinkedCircle\bin\Debug\net9.0\TADDoubleLinkedCircle.dll
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TADDoubleLinkedCircle\bin\Debug\net9.0\TADDoubleLinkedCircle.pdb
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TADDoubleLinkedCircle\obj\Debug\net9.0\TADDoubleLinkedCircle.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TADDoubleLinkedCircle\obj\Debug\net9.0\TADDoubleLinkedCircle.AssemblyInfoInputs.cache
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TADDoubleLinkedCircle\obj\Debug\net9.0\TADDoubleLinkedCircle.AssemblyInfo.cs
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TADDoubleLinkedCircle\obj\Debug\net9.0\TADDoubleLinkedCircle.csproj.CoreCompileInputs.cache
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TADDoubleLinkedCircle\obj\Debug\net9.0\TADDoubleLinkedCircle.sourcelink.json
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TADDoubleLinkedCircle\obj\Debug\net9.0\TADDoubleLinkedCircle.dll
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TADDoubleLinkedCircle\obj\Debug\net9.0\refint\TADDoubleLinkedCircle.dll
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TADDoubleLinkedCircle\obj\Debug\net9.0\TADDoubleLinkedCircle.pdb
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TADDoubleLinkedCircle\obj\Debug\net9.0\TADDoubleLinkedCircle.genruntimeconfig.cache
+C:\Users\gusta\Downloads\Estrutura de dados\Pratica\TADDoubleLinkedCircle\obj\Debug\net9.0\ref\TADDoubleLinkedCircle.dll

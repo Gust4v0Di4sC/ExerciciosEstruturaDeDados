@@ -56,7 +56,8 @@ namespace taddoublelinkedlistcirc
             {
                 if (elementoInserido != null && Inicio != null)
                 {
-                    elementoInserido.GetSetProximo = Inicio;elementoInserido.GetSetAnterior = Inicio.GetSetAnterior;
+                    elementoInserido.GetSetProximo = Inicio;
+                    elementoInserido.GetSetAnterior = Inicio.GetSetAnterior;
                     Inicio.GetSetAnterior = elementoInserido;
                     elementoInserido.GetSetAnterior = elementoInserido.GetSetProximo;
                     Inicio = elementoInserido;
@@ -314,14 +315,37 @@ namespace taddoublelinkedlistcirc
             {
                 Elemento? elementoImpresso = GetInicio();
                 int posicaoAtual = 1;
-                while (posicaoAtual < GetQtd())
+                while (posicaoAtual <= GetQtd())
                 {
                     ImprimeElemento(elementoImpresso);
                     if (elementoImpresso != null)
                     {
-                      elementoImpresso = elementoImpresso.GetSetAnterior;  
+                      elementoImpresso = elementoImpresso.GetSetProximo;  
                     }
                     
+                    posicaoAtual++;
+                }
+            }
+        }
+
+        public void ImprimeAntiHorario()
+        {
+            if (IsEmpty())
+            {
+                Console.WriteLine("A lista está vazia ");
+            }
+            else
+            {
+                Elemento? elementoImpresso = GetInicio();
+                int posicaoAtual = 1;
+                while (posicaoAtual <= GetQtd())
+                {
+                    ImprimeElemento(elementoImpresso);
+                    if (elementoImpresso != null)
+                    {
+                        elementoImpresso = elementoImpresso.GetSetAnterior;
+                    }
+
                     posicaoAtual++;
                 }
             }
