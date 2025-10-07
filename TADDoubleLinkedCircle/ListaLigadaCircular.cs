@@ -9,7 +9,7 @@ namespace taddoublelinkedlistcirc
         {
             if (elementoImpresso != null)
             {
-               Console.WriteLine(elementoImpresso.GetSetId); 
+                Console.WriteLine(elementoImpresso.GetSetId);
             }
         }
 
@@ -17,9 +17,9 @@ namespace taddoublelinkedlistcirc
         {
             if (elementoAutoConectado != null)
             {
-              elementoAutoConectado.GetSetProximo = elementoAutoConectado;elementoAutoConectado.GetSetAnterior = elementoAutoConectado;  
+                elementoAutoConectado.GetSetProximo = elementoAutoConectado; elementoAutoConectado.GetSetAnterior = elementoAutoConectado;
             }
-            
+
         }
 
         private bool InsereEmVazio(Elemento? elementoInserido)
@@ -51,19 +51,29 @@ namespace taddoublelinkedlistcirc
             if (IsEmpty())
             {
                 InsereEmVazio(elementoInserido);
+                // Quando insere o primeiro elemento, ele aponta para si mesmo
+                if (Inicio != null)
+                {
+                    Inicio.GetSetProximo = Inicio;
+                    Inicio.GetSetAnterior = Inicio;
+                }
             }
             else
             {
                 if (elementoInserido != null && Inicio != null)
                 {
+                    Elemento? ultimo = Inicio.GetSetAnterior; // Pega o último elemento
+
                     elementoInserido.GetSetProximo = Inicio;
-                    elementoInserido.GetSetAnterior = Inicio.GetSetAnterior;
+                    elementoInserido.GetSetAnterior = ultimo;
+
                     Inicio.GetSetAnterior = elementoInserido;
-                    elementoInserido.GetSetAnterior = elementoInserido.GetSetProximo;
-                    Inicio = elementoInserido;
+                    if (ultimo != null)
+                    {
+                        ultimo.GetSetProximo = elementoInserido;
+                    }
+                    Inicio = elementoInserido; // O novo elemento é o início
                 }
-                
-                
             }
             Qtd++;
         }
@@ -73,86 +83,118 @@ namespace taddoublelinkedlistcirc
             if (IsEmpty())
             {
                 InsereEmVazio(elementoInserido);
+                // Quando insere o primeiro elemento, ele aponta para si mesmo
+                if (Inicio != null)
+                {
+                    Inicio.GetSetProximo = Inicio;
+                    Inicio.GetSetAnterior = Inicio;
+                }
             }
             else
             {
                 if (elementoInserido != null && Inicio != null)
                 {
+                    Elemento? ultimo = Inicio.GetSetAnterior; // Pega o último elemento atual
+
                     elementoInserido.GetSetProximo = Inicio;
-                    elementoInserido.GetSetAnterior = Inicio.GetSetAnterior;
-                    Inicio.GetSetAnterior = elementoInserido.GetSetProximo;
-                    Inicio.GetSetAnterior = elementoInserido;
+                    elementoInserido.GetSetAnterior = ultimo;
+
+                    if (ultimo != null)
+                    {
+                        ultimo.GetSetProximo = elementoInserido;
+                    }
+                    Inicio.GetSetAnterior = elementoInserido; // O novo elemento é o anterior do início (o novo último)
                 }
-                
             }
             Qtd++;
         }
 
-        public Elemento? RemoveInicio()
+       public Elemento? RemoveInicio()
+{
+    if (IsEmpty())
+    {
+        return null;
+    }
+
+    if (Qtd == 1)
+    {
+        return RemoveUnico();
+    }
+
+    Elemento? elementoRemovido = Inicio;
+    
+    if (elementoRemovido != null && Inicio != null)
+    {
+        // Precisamos do anterior (o último) e do próximo do Início atual
+        Elemento? proximoDoInicio = Inicio.GetSetProximo;
+        Elemento? anteriorDoInicio = Inicio.GetSetAnterior;
+
+        // O anterior do Início (o último elemento) agora aponta para o próximo do Início como seu próximo
+        if (anteriorDoInicio != null)
         {
-            if (IsEmpty())
-            {
-                return null;
-            }
-
-            if (Qtd == 1)
-            {
-                return RemoveUnico();
-            }
-
-            Elemento? elementoRemovido = Inicio;
-            
-            
-            if (elementoRemovido != null && Inicio != null)
-            {
-                if (Inicio.GetSetAnterior != null && Inicio.GetSetProximo != null)
-                {
-                    Inicio.GetSetAnterior.GetSetProximo = Inicio.GetSetProximo;
-                    Inicio.GetSetProximo.GetSetAnterior = Inicio.GetSetAnterior;
-                }
-                Inicio = Inicio.GetSetProximo;
-                elementoRemovido.GetSetProximo = elementoRemovido;
-                elementoRemovido.GetSetAnterior = elementoRemovido;
-            }
-            
-            Qtd--;
-            return elementoRemovido;
+            anteriorDoInicio.GetSetProximo = proximoDoInicio;
+        }
+        
+        // O próximo do Início (o segundo elemento) agora aponta para o anterior do Início como seu anterior
+        if (proximoDoInicio != null)
+        {
+            proximoDoInicio.GetSetAnterior = anteriorDoInicio;
         }
 
-        public Elemento? RemoveFim()
+        Inicio = proximoDoInicio; // O segundo elemento se torna o novo Início
+
+        // Desconecta o elemento removido
+        if (elementoRemovido != null)
         {
-            if (IsEmpty())
-            {
-                return null;
-            }
-
-            if (Qtd == 1)
-            {
-                return RemoveUnico();
-            }
-
-            if (Inicio != null)
-            {
-                Elemento? elementoRemovido = Inicio.GetSetAnterior;
-                if (elementoRemovido != null)
-                {
-                    if (elementoRemovido.GetSetAnterior != null && Inicio != null)
-                    {
-                        Inicio.GetSetAnterior = elementoRemovido.GetSetAnterior;
-                        elementoRemovido.GetSetAnterior.GetSetProximo = Inicio;
-                        elementoRemovido.GetSetProximo = elementoRemovido;
-                        elementoRemovido.GetSetAnterior = elementoRemovido;
-                    }
-                }
-
-
-                Qtd--;
-                return elementoRemovido;
-            }
-
-            return null;
-            
+            elementoRemovido.GetSetProximo = elementoRemovido; // Opcional: isolar
+            elementoRemovido.GetSetAnterior = elementoRemovido; // Opcional: isolar
         }
+    }
+    
+    Qtd--;
+    return elementoRemovido;
+}
+
+       public Elemento? RemoveFim()
+{
+    if (IsEmpty())
+    {
+        return null;
+    }
+
+    if (Qtd == 1)
+    {
+        return RemoveUnico();
+    }
+
+    if (Inicio != null)
+    {
+        Elemento? elementoRemovido = Inicio.GetSetAnterior; // O último elemento
+        
+        if (elementoRemovido != null)
+        {
+            Elemento? novoUltimo = elementoRemovido.GetSetAnterior; // O elemento antes do removido
+
+            // O novo último (elemento antes do removido) agora aponta para o Início como seu próximo
+            if (novoUltimo != null)
+            {
+                novoUltimo.GetSetProximo = Inicio;
+            }
+            
+            // O Início agora aponta para o novo último como seu anterior
+            Inicio.GetSetAnterior = novoUltimo;
+
+            // Desconecta o elemento removido
+            elementoRemovido.GetSetProximo = elementoRemovido; // Opcional: isolar
+            elementoRemovido.GetSetAnterior = elementoRemovido; // Opcional: isolar
+        }
+
+        Qtd--;
+        return elementoRemovido;
+    }
+
+    return null; // Nunca deveria acontecer se Qtd > 1 e Inicio != null
+}
 
         public Elemento? GetPosHorario(Elemento? elementoBuscado, int posicao)
         {
@@ -193,42 +235,65 @@ namespace taddoublelinkedlistcirc
         }
 
         public bool RemoveElemento(Elemento? elementoRemovido)
+{
+    if (IsEmpty() || elementoRemovido == null)
+    {
+        return false;
+    }
+
+    if (Qtd == 1)
+    {
+        RemoveUnico();
+        return true;
+    }
+
+    // Caso o elemento a ser removido seja o início
+    if (elementoRemovido == Inicio)
+    {
+        RemoveInicio(); // Já trata as religações e decrementa Qtd
+        return true;
+    }
+
+    // Caso o elemento a ser removido seja o último
+    if (elementoRemovido == Inicio.GetSetAnterior)
+    {
+        RemoveFim(); // Já trata as religações e decrementa Qtd
+        return true;
+    }
+
+    // Percorrer a lista para encontrar o elemento
+    Elemento? atual = Inicio?.GetSetProximo; // Começa do segundo elemento
+    while (atual != null && atual != Inicio) // Percorre até voltar ao início
+    {
+        if (atual == elementoRemovido)
         {
-            if (IsEmpty() || elementoRemovido == null)
+            // Encontrou o elemento a ser removido
+            Elemento? anterior = atual.GetSetAnterior;
+            Elemento? proximo = atual.GetSetProximo;
+
+            // Religa os vizinhos
+            if (anterior != null)
             {
-                return false;
+                anterior.GetSetProximo = proximo;
+            }
+            if (proximo != null)
+            {
+                proximo.GetSetAnterior = anterior;
             }
 
-            if (Qtd == 1)
-            {
-                RemoveUnico();
-            }
-            else
-            {
-                if (elementoRemovido == Inicio)
-                {
-                    if (elementoRemovido != null)
-                    {
-                        Inicio = elementoRemovido.GetSetProximo;
+            // Isola o elemento removido
+            atual.GetSetProximo = atual;
+            atual.GetSetAnterior = atual;
 
-                        if (elementoRemovido.GetSetAnterior != null && elementoRemovido.GetSetProximo != null)
-                        {
-                            elementoRemovido.GetSetAnterior.GetSetProximo = elementoRemovido.GetSetProximo;
-
-                            elementoRemovido.GetSetProximo.GetSetAnterior = elementoRemovido.GetSetAnterior;
-                        }
-                    }
-
-                    
-
-                    
-
-                    AutoConex(elementoRemovido);
-                    Qtd--;
-                }
-            }
+            Qtd--;
             return true;
         }
+        atual = atual.GetSetProximo;
+    }
+
+    // Se chegou aqui, o elemento não foi encontrado na lista (ou a lista está vazia, o que já foi tratado)
+    return false;
+}
 
 
         public bool InsereHorario(Elemento elementoNovo, Elemento elementoAtual)
@@ -290,12 +355,12 @@ namespace taddoublelinkedlistcirc
                     elementoNovo.GetSetAnterior = elementoAtual;
                     if (elementoAtual.GetSetProximo != null)
                     {
-                       elementoAtual.GetSetProximo.GetSetAnterior = elementoNovo; 
+                        elementoAtual.GetSetProximo.GetSetAnterior = elementoNovo;
                     }
-                    
+
                     elementoAtual.GetSetProximo = elementoNovo;
                 }
-                
+
                 if (elementoAtual == Inicio)
                 {
                     Inicio = elementoNovo;
@@ -320,10 +385,9 @@ namespace taddoublelinkedlistcirc
                     ImprimeElemento(elementoImpresso);
                     if (elementoImpresso != null)
                     {
-                      elementoImpresso = elementoImpresso.GetSetProximo;  
+                        elementoImpresso = elementoImpresso.GetSetProximo; posicaoAtual++;
                     }
-                    
-                    posicaoAtual++;
+
                 }
             }
         }
@@ -343,10 +407,9 @@ namespace taddoublelinkedlistcirc
                     ImprimeElemento(elementoImpresso);
                     if (elementoImpresso != null)
                     {
-                        elementoImpresso = elementoImpresso.GetSetAnterior;
+                        elementoImpresso = elementoImpresso.GetSetAnterior; posicaoAtual++;
                     }
 
-                    posicaoAtual++;
                 }
             }
         }
