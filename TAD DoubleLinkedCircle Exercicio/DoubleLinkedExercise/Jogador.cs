@@ -33,5 +33,11 @@ namespace doublelinkedcircleexercise
             get { return Casa; }
             set { Casa = value; }
         }
+
+        public int GetSetPerdeAvez
+        {
+            get { return PerdeAvez; }
+            set { PerdeAvez = value; }
+        }
     }
 }

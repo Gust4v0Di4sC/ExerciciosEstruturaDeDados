@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DoubleLinkedExercise")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02eb0ed3abecc06eb0d50dbe5e6ed59ae8248ab4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+944909cbd69a97b7cfbdee7686ca50906a61ecf7")]
 [assembly: System.Reflection.AssemblyProductAttribute("DoubleLinkedExercise")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DoubleLinkedExercise")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

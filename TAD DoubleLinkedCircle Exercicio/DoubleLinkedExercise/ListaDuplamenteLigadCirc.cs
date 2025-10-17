@@ -2,21 +2,21 @@ namespace doublelinkedcircleexercise
 {
     public class ListaDuplamenteLigadaCirc
     {
-        private Elemento Inicio;
+        private Elemento? Inicio;
         private int Qtd;
 
-        public void ImprimeElemento(Elemento elementoImpresso)
+        public void ImprimeElemento(Elemento? elementoImpresso)
         {
             Console.WriteLine(elementoImpresso.GetSetId);
         }
 
-        private void AutoConex(Elemento elementoConectado)
+        private void AutoConex(Elemento? elementoConectado)
         {
             elementoConectado.GetSetProximo = elementoConectado;
             elementoConectado.GetSetAnterior = elementoConectado;
         }
 
-        private bool InsereEmVazio(Elemento elementoInserido)
+        private bool InsereEmVazio(Elemento? elementoInserido)
         {
             if (Qtd > 0)
             {
@@ -26,19 +26,19 @@ namespace doublelinkedcircleexercise
             return true;
         }
 
-        private Elemento RemoveUnico()
+        private Elemento? RemoveUnico()
         {
             if (IsEmpty() || Qtd > 1)
             {
                 return null;
             }
-            Elemento elementoRemovido = Inicio;
+            Elemento? elementoRemovido = Inicio;
             Inicio = null;
             Qtd = 0;
             return elementoRemovido;
         }
 
-        public void InsereInicio(Elemento elementoInserido)
+        public virtual void InsereInicio(Elemento? elementoInserido)
         {
             if (IsEmpty())
             {
@@ -49,14 +49,14 @@ namespace doublelinkedcircleexercise
                 elementoInserido.GetSetProximo = Inicio;
                 elementoInserido.GetSetAnterior = Inicio.GetSetAnterior;
                 Inicio.GetSetAnterior = elementoInserido;
-                Elemento proximoElem = elementoInserido.GetSetProximo = elementoInserido;
+                Elemento? proximoElem = elementoInserido.GetSetProximo = elementoInserido;
                 elementoInserido.GetSetAnterior = proximoElem;
                 Inicio = elementoInserido;
             }
             Qtd++;
         }
 
-        public void InsereUltimo(Elemento elementoInserido)
+        public virtual void InsereUltimo(Elemento? elementoInserido)
         {
             if (IsEmpty())
             {
@@ -66,14 +66,14 @@ namespace doublelinkedcircleexercise
             {
                 elementoInserido.GetSetProximo = Inicio;
                 elementoInserido.GetSetAnterior = Inicio.GetSetAnterior;
-                Elemento proximoElem = elementoInserido.GetSetProximo = elementoInserido;
+                Elemento? proximoElem = elementoInserido.GetSetProximo = elementoInserido;
                 Inicio.GetSetAnterior = proximoElem;
                 Inicio.GetSetAnterior = elementoInserido;
             }
             Qtd++;
         }
 
-        public Elemento RemoveInicio()
+        public virtual Elemento? RemoveInicio()
         {
             if (IsEmpty())
             {
@@ -83,10 +83,10 @@ namespace doublelinkedcircleexercise
             {
                 return RemoveUnico();
             }
-            Elemento elementoRemovido = Inicio;
-            Elemento anteriorElem = Inicio.GetSetAnterior;
+            Elemento? elementoRemovido = Inicio;
+            Elemento? anteriorElem = Inicio.GetSetAnterior;
             anteriorElem = Inicio.GetSetProximo = Inicio.GetSetProximo;
-            Elemento proxElem = Inicio.GetSetProximo;
+            Elemento? proxElem = Inicio.GetSetProximo;
             proxElem = Inicio.GetSetAnterior = Inicio.GetSetAnterior;
             Inicio = Inicio.GetSetProximo;
             elementoRemovido.GetSetProximo = elementoRemovido;
@@ -95,7 +95,7 @@ namespace doublelinkedcircleexercise
             return elementoRemovido;
         }
 
-        public Elemento RemoveFim()
+        public Elemento? RemoveFim()
         {
             if (IsEmpty())
             {
@@ -105,7 +105,7 @@ namespace doublelinkedcircleexercise
             {
                 return RemoveUnico();
             }
-            Elemento elementoRemovido = Inicio.GetSetAnterior;
+            Elemento? elementoRemovido = Inicio.GetSetAnterior;
             Inicio.GetSetAnterior = elementoRemovido.GetSetAnterior;
             elementoRemovido.GetSetAnterior = elementoRemovido.GetSetProximo = Inicio;
             elementoRemovido.GetSetProximo = elementoRemovido;
@@ -114,14 +114,14 @@ namespace doublelinkedcircleexercise
             return elementoRemovido;
         }
 
-        public Elemento GetPosHorario(Elemento elementoBuscado, int posicaoBuscada)
+        public Elemento? GetPosHorario(Elemento? elementoBuscado, int posicaoBuscada)
         {
             if (posicaoBuscada > Qtd || posicaoBuscada <= 0)
             {
                 return null;
             }
             int posAtual = 1;
-            Elemento elementoAuxiliar = elementoBuscado;
+            Elemento? elementoAuxiliar = elementoBuscado;
             while (posAtual < posicaoBuscada)
             {
                 elementoAuxiliar = elementoAuxiliar.GetSetProximo;
@@ -130,14 +130,14 @@ namespace doublelinkedcircleexercise
             return elementoAuxiliar;
         }
 
-        public Elemento GetPosAntiHorario(Elemento elementoBuscado, int posicaoBuscada)
+        public Elemento? GetPosAntiHorario(Elemento? elementoBuscado, int posicaoBuscada)
         {
             if (posicaoBuscada > Qtd || posicaoBuscada <= 0)
             {
                 return null;
             }
             int posAtual = 1;
-            Elemento elementoAuxiliar = elementoBuscado;
+            Elemento? elementoAuxiliar = elementoBuscado;
             while (posAtual < posicaoBuscada)
             {
                 elementoAuxiliar = elementoAuxiliar.GetSetAnterior;
@@ -146,7 +146,7 @@ namespace doublelinkedcircleexercise
             return elementoAuxiliar;
         }
 
-        public bool RemoveElemento(Elemento elementoRemovido)
+        public virtual bool RemoveElemento(Elemento? elementoRemovido)
         {
             if (IsEmpty() & elementoRemovido == null)
             {
@@ -163,10 +163,10 @@ namespace doublelinkedcircleexercise
                     Inicio = elementoRemovido.GetSetProximo;
                 }
 
-                Elemento antElem = elementoRemovido.GetSetAnterior;
+                Elemento? antElem = elementoRemovido.GetSetAnterior;
                 antElem.GetSetProximo = elementoRemovido.GetSetProximo;
 
-                Elemento proxElem = elementoRemovido.GetSetProximo;
+                Elemento? proxElem = elementoRemovido.GetSetProximo;
                 proxElem.GetSetAnterior = elementoRemovido.GetSetAnterior;
 
                 AutoConex(elementoRemovido);
@@ -176,7 +176,7 @@ namespace doublelinkedcircleexercise
             return true;
         }
 
-        public bool InsereHorario(Elemento elementoNovo, Elemento elementoAtual)
+        public virtual bool InsereHorario(Elemento? elementoNovo, Elemento? elementoAtual)
         {
             if (elementoNovo == null)
             {
@@ -227,5 +227,77 @@ namespace doublelinkedcircleexercise
             }
             return true;
         }
+
+        public void ImprimeHorario()
+        {
+            if (IsEmpty())
+            {
+                Console.WriteLine("A lista está vazia");
+            }
+            else
+            {
+                Elemento elementoImpresso = GetInicio();
+                int posAtual = 1;
+                while (posAtual <= GetQtd())
+                {
+                    ImprimeElemento(elementoImpresso);
+                    elementoImpresso = elementoImpresso.GetSetProximo;
+                    posAtual++;
+                }
+            }
+        }
+
+
+        public virtual void ImprimeAntiHorario()
+        {
+            if (IsEmpty())
+            {
+                Console.WriteLine("A lista está vazia");
+
+            }
+            else
+            {
+                Elemento elementoImpresso = GetInicio();
+                int posAtual = 1;
+                while (posAtual <= GetQtd())
+                {
+                    ImprimeElemento(elementoImpresso);
+                    elementoImpresso = elementoImpresso.GetSetAnterior;
+                    posAtual++;
+                }
+            }
+        }
+
+
+        public Elemento GetInicio()
+        {
+            return Inicio;
+        }
+
+        public Elemento GetUltimo()
+        {
+            if (IsEmpty())
+            {
+                return null;
+            }
+            return Inicio.GetSetAnterior;
+        }
+
+        public bool IsEmpty()
+        {
+            return Inicio == null;
+        }
+
+        public int GetQtd()
+        {
+            return Qtd;
+        }
+
+        public void Destroi()
+        {
+            Inicio = null;
+            Qtd = 0;
+        }
+
     }
 }
